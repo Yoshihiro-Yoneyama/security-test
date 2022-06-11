@@ -12,4 +12,5 @@ public class Test2 {
     public Test2(@NonNull Integer value) {
         this.value = value;
     }
+
 }
