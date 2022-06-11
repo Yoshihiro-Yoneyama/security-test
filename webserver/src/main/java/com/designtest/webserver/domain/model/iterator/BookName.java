@@ -4,7 +4,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.ToString;
-import org.hibernate.validator.constraints.EAN;
 
 @ToString
 @EqualsAndHashCode

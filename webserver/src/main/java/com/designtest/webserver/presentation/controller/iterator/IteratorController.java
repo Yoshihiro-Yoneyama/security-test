@@ -15,8 +15,9 @@ import java.util.stream.Collectors;
 @RestController
 public class IteratorController {
 
-    @GetMapping(value = "/api/iterator-design", produces = "application/json")
-    public String showBookShelf() {
+    @GetMapping("/api/iterator-design")
+//    @GetMapping("/api/iterator-design", produces = "application/json")
+    public IteratorResponse showBookShelf() {
         BookShelf bookShelf = new BookShelf(4);
         bookShelf.appendBook(new Book(new BookName("Around the World in 80 Days")));
         bookShelf.appendBook(new Book(new BookName("Bible")));
@@ -28,11 +29,11 @@ public class IteratorController {
         for (Book book : bookShelf) {
             bookList.add(book.getName().getValue());
         }
-        return "test";
-//        return new IteratorResponse(bookList.stream()
-//                .map(IteratorResponseItem::new)
-//                .collect(Collectors.toList())
-//        );
+//        return bookList;
+        return new IteratorResponse(bookList.stream()
+                .map(IteratorResponseItem::new)
+                .collect(Collectors.toList())
+        );
     }
 }
 
