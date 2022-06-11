@@ -1,6 +1,7 @@
 package com.designtest.webserver.application.service.iterator;
 
-import com.designtest.webserver.domain.model.book.Book;
+
+import com.designtest.webserver.domain.model.iterator.Book;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

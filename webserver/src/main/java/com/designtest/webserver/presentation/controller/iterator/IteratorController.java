@@ -1,8 +1,8 @@
 package com.designtest.webserver.presentation.controller.iterator;
 
 import com.designtest.webserver.application.service.iterator.BookShelf;
-import com.designtest.webserver.domain.model.book.Book;
-import com.designtest.webserver.domain.model.book.BookName;
+import com.designtest.webserver.domain.model.iterator.Book;
+import com.designtest.webserver.domain.model.iterator.BookName;
 import com.designtest.webserver.presentation.view.iterator.IteratorResponse;
 import com.designtest.webserver.presentation.view.iterator.IteratorResponseItem;
 import org.springframework.web.bind.annotation.GetMapping;

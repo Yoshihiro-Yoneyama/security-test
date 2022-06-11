@@ -1,0 +1,29 @@
+{
+    "properties": [
+        {
+            "name": "app.security.admin.username",
+            "type": "java.lang.String",
+            "description": "Description for app.security.admin.username."
+        },
+        {
+            "name": "app.security.admin.password",
+            "type": "java.lang.String",
+            "description": "Description for app.security.admin.password."
+        },
+        {
+            "name": "app.hostname",
+            "type": "java.lang.String",
+            "description": "Description for app.hostname."
+        },
+        {
+            "name": "aws.ses.region",
+            "type": "java.lang.String",
+            "description": "Description for aws.ses.region."
+        },
+        {
+            "name": "aws.ses.source",
+            "type": "java.lang.String",
+            "description": "Description for aws.ses.source."
+        }
+    ]
+}
