@@ -37,12 +37,10 @@ out/
 .vscode/
 
 
-compiler.xmlgit rm -r --cached .
+compiler.xml
 jarRepositories.xml
 misc.xml
 modules.xml
 vcs.xml
-app-settings.env
-build.gradle
-gradlew
-gradlew.bat
+
+
