@@ -1,0 +1,36 @@
+#バージョンを指定
+version: '3'
+
+#サービスを定義
+services:
+
+  #DBサーバー
+  dbserver:
+    container_name: postgresql
+    build:
+      context: ./dbserver
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pgadmin
+      POSTGRES_PASSWORD: pgadmin
+    volumes:
+#      - ./dbserver/data:/var/lib/postgresql/data
+      - ./dbserver/init:/docker-entrypoint-initdb.d
+
+  #webサーバー
+  webserver:
+    build:
+      context: ./webserver
+    container_name: webserver
+    volumes:
+      - ./webserver:/project/webserver
+#      - ~/.aws:/root/.aws
+      - /project/webserver/.gradle
+    depends_on:
+#      - session
+      - dbserver
+    ports:
+      - "8080:8080"
+    env_file: ./webserver/app-settings.env
+    command: gradle clean bootRun -x test
