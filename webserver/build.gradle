@@ -1,0 +1,97 @@
+plugins {
+	id 'java'
+	id 'org.flywaydb.flyway' version '8.0.5'
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'com.google.cloud.tools.jib' version '2.8.0'
+}
+
+group = 'com.design'
+version = '0.0.1-SNAPSHOT'
+
+sourceSets {
+	main {
+		// mybatis SQL map XML ファイルを java 以下でも検知する
+		resources.srcDirs = ["src/main/java", "src/main/resources"]
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+//dependencyManagement {
+//	imports {
+//		mavenBom 'software.amazon.awssdk:bom:2.17.56'
+//	}
+//}
+
+dependencies {
+	// web
+//	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation "org.springframework.boot:spring-boot-starter-validation"
+
+	// thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	// mybatis
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+
+	// session
+//	implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.6.7'
+//	implementation 'org.springframework.session:spring-session-data-redis:2.6.3'
+
+	// openapi
+//	implementation 'org.springdoc:springdoc-openapi-ui:1.6.7'
+//	implementation 'org.springdoc:springdoc-openapi-security:1.6.7'
+
+	// postgres
+	implementation 'org.postgresql:postgresql'
+
+	// csv
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv'
+
+	// lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+	// devtool
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+
+	// test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.2.2'
+	testImplementation 'org.mockito:mockito-inline'
+	testImplementation 'org.flywaydb:flyway-core'
+}
+
+jib {
+	to {
+		image = 'design-test/webserver'
+	}
+}
+
+flyway {
+	schemas = ['testdb']
+}
+
+compileJava {
+	sourceCompatibility = '11'
+	targetCompatibility = '11'
+}
+
+compileTestJava {
+	sourceCompatibility = '15'
+	targetCompatibility = '15'
+	options.compilerArgs += ['--enable-preview']
+}
+
+test {
+	useJUnitPlatform()
+	jvmArgs = ['--enable-preview']
+}
