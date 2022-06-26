@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @RestController
 public class IteratorController {
 
-    @GetMapping("/api/iterator-design")
+    @GetMapping("/api/iterator")
 //    @GetMapping("/api/iterator-design", produces = "application/json")
     public IteratorResponse showBookShelf() {
         BookShelf bookShelf = new BookShelf(4);
