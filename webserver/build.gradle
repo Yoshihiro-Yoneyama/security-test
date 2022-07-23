@@ -81,8 +81,8 @@ flyway {
 }
 
 compileJava {
-	sourceCompatibility = '11'
-	targetCompatibility = '11'
+	sourceCompatibility = '15'
+	targetCompatibility = '15'
 }
 
 compileTestJava {
