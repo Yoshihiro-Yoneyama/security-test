@@ -1,6 +1,9 @@
-package com.designtest.webserver.domain.model.visitor;
+package com.designtest.webserver.application.service.visitor;
 
 import com.designtest.webserver.application.service.visitor.Visitor;
+import com.designtest.webserver.domain.model.visitor.Directory;
+import com.designtest.webserver.domain.model.visitor.Entry;
+import com.designtest.webserver.domain.model.visitor.File;
 
 import java.util.ArrayList;
 import java.util.List;
