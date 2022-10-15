@@ -1,7 +1,6 @@
 package com.designtest.webserver.domain.model.visitor;
 
 import com.designtest.webserver.application.service.visitor.Visitor;
-import com.designtest.webserver.domain.model.visitor.Entry;
 import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
