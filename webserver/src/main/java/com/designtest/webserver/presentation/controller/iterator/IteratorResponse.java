@@ -1,4 +1,4 @@
-package com.designtest.webserver.presentation.view.iterator;
+package com.designtest.webserver.presentation.controller.iterator;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

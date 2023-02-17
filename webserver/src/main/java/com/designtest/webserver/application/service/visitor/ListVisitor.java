@@ -4,6 +4,9 @@ import com.designtest.webserver.domain.model.visitor.Directory;
 import com.designtest.webserver.domain.model.visitor.Entry;
 import com.designtest.webserver.domain.model.visitor.File;
 
+import java.util.Set;
+
+
 public class ListVisitor extends Visitor {
 
   private String currentDir = "";
@@ -24,3 +27,19 @@ public class ListVisitor extends Visitor {
     currentDir = saveDir;
   }
 }
+
+class A {
+  public double x;
+  public double y;
+}
+
+class B {
+
+  public static void test () {
+    A a = new A();
+    a.x = 1;
+    Double c = a.x;
+  }
+}
+
+
