@@ -6,7 +6,7 @@ services:
 
   #DBサーバー
   dbserver:
-    container_name: postgresql
+    container_name: posgre
     build:
       context: ./dbserver
     ports:
@@ -22,7 +22,7 @@ services:
   webserver:
     build:
       context: ./webserver
-    container_name: webserver
+    container_name: backend
     volumes:
       - ./webserver:/project/webserver
 #      - ~/.aws:/root/.aws
